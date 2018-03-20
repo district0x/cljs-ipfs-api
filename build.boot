@@ -54,8 +54,7 @@
  '[adzerk.bootlaces :refer :all]
  )
 
-(bootlaces! +version+ ;;:dont-modify-paths? true
-            )
+(bootlaces! +version+)
 ;; (deftask npm-deps
 ;;   "Install npm deps to node_modules."
 ;;   []
@@ -142,5 +141,9 @@
    (cljs :compiler-options {:target :nodejs})
    (build-jar)))
 
-(task-options!
- )
+(deftask deploy []
+  (comp
+   (production)
+   (cljs :compiler-options {:target :nodejs})
+   (build-jar)
+   (push :repo "clojars" :gpg-sign (not (.endsWith +version+ "-SNAPSHOT")))))
