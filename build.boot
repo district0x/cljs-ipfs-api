@@ -1,6 +1,6 @@
 (set-env!
- :source-paths    #{"src"}
- :resource-paths  #{"resources"}
+ ;; :source-paths    #{"src"}
+ :resource-paths  #{"resources" "src"}
  ;; :npm-deps {}
  :dependencies '[[org.clojure/clojure "1.9.0"]
 
@@ -124,11 +124,11 @@
 
 (task-options!
  ;; sift {:include #{#"\.jar$"}}
- push {:repo           "deploy"
-       :ensure-branch  "master"
-       :ensure-clean   true
-       :ensure-tag     (last-commit)
-       :ensure-version +version+}
+ ;; push {:repo           "deploy"
+ ;;       :ensure-branch  "master"
+ ;;       :ensure-clean   true
+ ;;       :ensure-tag     (last-commit)
+ ;;       :ensure-version +version+}
  pom  {:project     'org.clojars.d0x-mike/cljs-ipfs-api
        :version     +version+
        :description "ClojureScript wrapper over js-ipfs-api."
