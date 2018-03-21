@@ -2,7 +2,7 @@
  :source-paths    #{"src"}
  :resource-paths  #{"resources"}
  ;; :npm-deps {}
- :dependencies '[[org.clojure/clojure "1.9.0-alpha17"]
+ :dependencies '[[org.clojure/clojure "1.9.0"]
 
                  ;;ENV
                  [com.taoensso/timbre "4.10.0"]
@@ -123,13 +123,13 @@
                 )))
 
 (task-options!
- sift {:include #{#"\.jar$"}}
+ ;; sift {:include #{#"\.jar$"}}
  push {:repo           "deploy"
        :ensure-branch  "master"
        :ensure-clean   true
        :ensure-tag     (last-commit)
        :ensure-version +version+}
- pom  {:project     'cljs-ipfs-api
+ pom  {:project     'wambat/cljs-ipfs-api
        :version     +version+
        :description "ClojureScript wrapper over js-ipfs-api."
        :url         "https://github.com/district0x/cljs-ipfs-api"
@@ -142,13 +142,14 @@
    (cljs :compiler-options {:target :nodejs})
    (build-jar)))
 
-(deftask deploy-snapshot []
+(deftask deploy []
   (comp
    (production)
    (cljs :compiler-options {:target :nodejs})
    ;; (build-jar)
    (pom)
    (jar)
-;; (push :repo "clojars" :gpg-sign (not (.endsWith +version+ "-SNAPSHOT")))
-   (push-snapshot)
+   (install)
+   (push :repo "clojars" :gpg-sign (not (.endsWith +version+ "-SNAPSHOT")))
+   ;; (push-snapshot)
    ))
