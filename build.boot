@@ -145,7 +145,7 @@
 (deftask deploy []
   (comp
    (production)
-   (cljs :compiler-options {:target :nodejs})
+   ;; (cljs :compiler-options {:target :nodejs})
    ;; (build-jar)
    (pom)
    (jar)
