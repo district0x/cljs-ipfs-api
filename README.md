@@ -5,7 +5,7 @@ ClojureScript wrapper for [JavaScript HTTPL client library](https://github.com/i
 ## Installation
 ```clojure
 ;; Add to dependencies
-[cljs-ipfs-api "0.0.12-SNAPSHOT"]
+[org.clojars.d0x-mike/cljs-ipfs-api "0.0.13-SNAPSHOT"]
 ```
 ```clojure
 (ns my.app
