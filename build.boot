@@ -38,7 +38,7 @@
                  ;; [degree9/boot-npm "1.9.0" :scope "test"]
                  ])
 
-  (def +version+ "0.0.13-SNAPSHOT")
+  (def +version+ "0.0.13")
 
 (require
  '[samestep.boot-refresh :refer [refresh]]
