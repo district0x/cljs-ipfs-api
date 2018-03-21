@@ -129,7 +129,7 @@
        :ensure-clean   true
        :ensure-tag     (last-commit)
        :ensure-version +version+}
- pom  {:project     'wambat/cljs-ipfs-api
+ pom  {:project     'org.clojars.d0x-mike/cljs-ipfs-api
        :version     +version+
        :description "ClojureScript wrapper over js-ipfs-api."
        :url         "https://github.com/district0x/cljs-ipfs-api"
@@ -145,11 +145,11 @@
 (deftask deploy []
   (comp
    (production)
-   ;; (cljs :compiler-options {:target :nodejs})
-   ;; (build-jar)
-   (pom)
-   (jar)
-   (install)
-   (push :repo "clojars" :gpg-sign (not (.endsWith +version+ "-SNAPSHOT")))
-   ;; (push-snapshot)
+   (cljs :compiler-options {:target :nodejs})
+   (build-jar)
+   ;; (pom)
+   ;; (jar)
+   ;; (install)
+   ;; (push :repo "clojars" :gpg-sign (not (.endsWith +version+ "-SNAPSHOT")))
+   (push-snapshot)
    ))
