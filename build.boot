@@ -123,12 +123,13 @@
                 )))
 
 (task-options!
+ sift {:include #{#"\.jar$"}}
  push {:repo           "deploy"
        :ensure-branch  "master"
        :ensure-clean   true
        :ensure-tag     (last-commit)
        :ensure-version +version+}
- pom  {:project     'org.clojars.wambat/cljs-ipfs-api
+ pom  {:project     'cljs-ipfs-api
        :version     +version+
        :description "ClojureScript wrapper over js-ipfs-api."
        :url         "https://github.com/district0x/cljs-ipfs-api"
