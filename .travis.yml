@@ -28,5 +28,7 @@ before_script:
   - tar -xzf ipfs-update.tar.gz
   - "echo 'Installing latest IPFS'"
   - ipfs-update/ipfs-update install latest
+  - "echo 'Init IPFS'"
+  - ipfs init 
   - "echo 'Running IPFS daemon'"
   - ipfs daemon > /dev/null &
