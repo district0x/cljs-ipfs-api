@@ -27,6 +27,6 @@ before_script:
   - "echo 'Extracting'"
   - tar -xzf ipfs-update.tar.gz
   - "echo 'Installing latest IPFS'"
-  - ipfs-update install latest
+  - ipfs-update/ipfs-update install latest
   - "echo 'Running IPFS daemon'"
   - ipfs daemon > /dev/null &
