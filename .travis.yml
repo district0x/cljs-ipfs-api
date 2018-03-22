@@ -30,9 +30,9 @@ before_script:
   - ipfs-update/ipfs-update install latest
   - "echo 'Init IPFS'"
   - ipfs init 
-  - "NPM-deps"
+  - "echo 'NPM-deps'"
   - boot npm-deps
-  - "NPM-deps"
+  - "echo 'NPM-deps install'"
   - npm install
   - "echo 'Running IPFS daemon'"
   - ipfs daemon > /dev/null &
