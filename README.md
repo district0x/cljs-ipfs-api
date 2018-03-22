@@ -1,11 +1,13 @@
 # Cljs IPFS-API
 
+[![Build Status](https://travis-ci.org/district0x/cljs-ipfs-api.svg?branch=master)](https://travis-ci.org/district0x/cljs-ipfs-api)
+
 ClojureScript wrapper for [JavaScript HTTPL client library](https://github.com/ipfs/js-ipfs-api) 
 
 ## Installation
 ```clojure
 ;; Add to dependencies
-[org.clojars.d0x-mike/cljs-ipfs-api "0.0.13-SNAPSHOT"]
+[district0x/cljs-ipfs-api "0.0.13-SNAPSHOT"]
 ```
 ```clojure
 (ns my.app

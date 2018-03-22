@@ -129,7 +129,7 @@
  ;;       :ensure-clean   true
  ;;       :ensure-tag     (last-commit)
  ;;       :ensure-version +version+}
- pom  {:project     'org.clojars.d0x-mike/cljs-ipfs-api
+ pom  {:project     'district0x/cljs-ipfs-api
        :version     +version+
        :description "ClojureScript wrapper over js-ipfs-api."
        :url         "https://github.com/district0x/cljs-ipfs-api"
@@ -147,9 +147,5 @@
    (production)
    (cljs :compiler-options {:target :nodejs})
    (build-jar)
-   ;; (pom)
-   ;; (jar)
-   ;; (install)
-   ;; (push :repo "clojars" :gpg-sign (not (.endsWith +version+ "-SNAPSHOT")))
    (push-snapshot)
    ))

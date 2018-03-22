@@ -7,7 +7,6 @@
                                                        error
                                                        fatal
                                                        report]]
-            [cljs.nodejs :as nodejs]
             [cljsjs.ipfs :as ipfs]))
 
 (def *ipfs-instance* (atom nil))
@@ -18,7 +17,7 @@
     i))
 
 (defn init-ipfs-node [param]
-  (let [ipfs-api (nodejs/require "ipfs-api")
+  (let [ipfs-api (js/require "ipfs-api")
         i (new ipfs-api param)]
     (reset! *ipfs-instance* i)
     i))
