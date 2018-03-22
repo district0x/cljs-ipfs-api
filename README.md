@@ -22,6 +22,7 @@ So basically, stick with the js-ipfs-api [docs](https://github.com/ipfs/js-ipfs-
 ### Example call
 ```clojure
 (init-ipfs-node "/ip4/127.0.0.1/tcp/5001")
+;;fls to avoid clashes with ls from files.ls
 (ifiles/fls "/ipfs/QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG/" (fn [err files]
                                                                       (info [err "ERROR"])
                                                                       (info [files "FILES"])))
