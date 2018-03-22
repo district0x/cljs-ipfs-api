@@ -1,7 +1,7 @@
 language: clojure
 script: boot test
 before_install:
- - sudo apt-get --yes install wget -qq update
+ - sudo apt-get --yes install wget
 before_script:
   - "echo 'Getting ipfs-update'"
   - wget https://dist.ipfs.io/ipfs-update/v1.5.2/ipfs-update_v1.5.2_linux-amd64.tar.gz -o ipfs-update.tar.gz
