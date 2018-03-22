@@ -16,8 +16,6 @@
   (async done
          (core/init-ipfs-node "/ip4/127.0.0.1/tcp/5001")
          (let [fs (js/require "fs")
-               _ (.readdir fs "./" (fn [err files]
-                                (info [:FILES files])))
                file (.createReadStream fs "resources/test/testfile.jpg")]
            (files/add file (fn [err files]
                              (is (= err nil))
