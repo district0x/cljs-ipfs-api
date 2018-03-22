@@ -20,7 +20,7 @@ cache:
   - $HOME/.boot/cache/lib
   - $HOME/bin
 before_install:
- - sudo apt-get --yes install wget
+ - sudo apt-get --yes install wget nodejs npm
 before_script:
   - "echo 'Getting ipfs-update'"
   - wget https://dist.ipfs.io/ipfs-update/v1.5.2/ipfs-update_v1.5.2_linux-amd64.tar.gz -O ipfs-update.tar.gz
@@ -30,5 +30,9 @@ before_script:
   - ipfs-update/ipfs-update install latest
   - "echo 'Init IPFS'"
   - ipfs init 
+  - "NPM-deps"
+  - boot npm-deps
+  - "NPM-deps"
+  - npm install
   - "echo 'Running IPFS daemon'"
   - ipfs daemon > /dev/null &

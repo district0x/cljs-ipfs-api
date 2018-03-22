@@ -35,7 +35,7 @@
                  [binaryage/dirac "1.1.3" :scope "test"]
                  [powerlaces/boot-cljs-devtools "0.2.0" :scope "test"]
                  [binaryage/devtools "0.9.4"]
-                 ;; [degree9/boot-npm "1.9.0" :scope "test"]
+                 [degree9/boot-npm "1.9.0" :scope "test"]
                  ])
 
   (def +version+ "0.0.13-SNAPSHOT")
@@ -49,17 +49,18 @@
  '[crisptrutski.boot-cljs-test :refer [test-cljs]]
  ;; '[org.martinklepsch.boot-garden :refer [garden]]
  '[powerlaces.boot-cljs-devtools :refer [cljs-devtools dirac]]
- ;; '[degree9.boot-npm :as npm]
+ '[degree9.boot-npm :as npm]
  '[boot.git :refer [last-commit]]
  '[adzerk.bootlaces :refer :all]
  )
 
 (bootlaces! +version+)
-;; (deftask npm-deps
-;;   "Install npm deps to node_modules."
-;;   []
-;;   (npm/npm :install ["ipfs-api@latest"]
-;;            :cache-key ::cache))
+
+(deftask npm-deps
+  "Install npm deps to node_modules."
+  []
+  (npm/npm :install ["ipfs-api@18.1.1"]
+           :cache-key ::cache))
 
 (deftask cljs-env []
   (task-options! cljs {:compiler-options {:target :nodejs
