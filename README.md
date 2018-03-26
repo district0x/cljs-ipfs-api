@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/district0x/cljs-ipfs-api.svg?branch=master)](https://travis-ci.org/district0x/cljs-ipfs-api)
 
-ClojureScript wrapper for [JavaScript HTTPL client library](https://github.com/ipfs/js-ipfs-api) 
+ClojureScript wrapper for [JavaScript HTTP IPFS client library](https://github.com/ipfs/js-ipfs-api) 
 
 ## Installation
 ```clojure
