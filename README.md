@@ -1,4 +1,4 @@
-# Cljs IPFS-API
+# Cljs IPFS-API (DEPRECATED)
 
 [![Build Status](https://travis-ci.org/district0x/cljs-ipfs-api.svg?branch=master)](https://travis-ci.org/district0x/cljs-ipfs-api)
 
